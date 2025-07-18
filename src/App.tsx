@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { initializeAuth } from './utils/auth';
-import { testConnection, createTables } from './config/database';
 
 import Layout from './components/Layout/Layout';
 import ProtectedRoute from './components/admin/ProtectedRoute';
@@ -23,21 +22,6 @@ function App() {
   useEffect(() => {
     // Initialize authentication
     initializeAuth();
-    
-    // Test database connection and create tables
-    const initializeDatabase = async () => {
-      try {
-        const isConnected = await testConnection();
-        if (isConnected) {
-          await createTables();
-          console.log('Database initialized successfully');
-        }
-      } catch (error) {
-        console.error('Database initialization failed:', error);
-      }
-    };
-    
-    initializeDatabase();
   }, []);
 
   return (
