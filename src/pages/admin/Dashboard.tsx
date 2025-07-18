@@ -92,6 +92,8 @@ const Dashboard: React.FC = () => {
     { title: 'Kelola Berita', icon: Newspaper, href: '/admin/berita', color: 'bg-blue-500' },
     { title: 'Kelola Galeri', icon: Image, href: '/admin/galeri', color: 'bg-purple-500' },
     { title: 'Kelola Agenda', icon: Calendar, href: '/admin/agenda', color: 'bg-green-500' },
+    { title: 'Kelola Struktur', icon: Users, href: '/admin/struktur', color: 'bg-indigo-500' },
+    { title: 'Kelola Layanan', icon: FileText, href: '/admin/layanan', color: 'bg-orange-500' },
     { title: 'Pengaturan Desa', icon: Settings, href: '/admin/pengaturan', color: 'bg-gray-500' }
   ];
 
@@ -171,7 +173,7 @@ const Dashboard: React.FC = () => {
           >
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-6">Aksi Cepat</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {quickActions.map((action, index) => (
                   <motion.button
                     key={action.title}

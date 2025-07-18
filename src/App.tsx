@@ -17,6 +17,12 @@ import Contact from './pages/Contact';
 // Admin Pages
 import Login from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
+import NewsManagement from './pages/admin/NewsManagement';
+import GalleryManagement from './pages/admin/GalleryManagement';
+import EventsManagement from './pages/admin/EventsManagement';
+import OrganizationManagement from './pages/admin/OrganizationManagement';
+import ServicesManagement from './pages/admin/ServicesManagement';
+import SettingsManagement from './pages/admin/SettingsManagement';
 
 function App() {
   useEffect(() => {
@@ -40,6 +46,12 @@ function App() {
         {/* Admin routes */}
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/admin/berita" element={<ProtectedRoute><NewsManagement /></ProtectedRoute>} />
+        <Route path="/admin/galeri" element={<ProtectedRoute><GalleryManagement /></ProtectedRoute>} />
+        <Route path="/admin/agenda" element={<ProtectedRoute><EventsManagement /></ProtectedRoute>} />
+        <Route path="/admin/struktur" element={<ProtectedRoute><OrganizationManagement /></ProtectedRoute>} />
+        <Route path="/admin/layanan" element={<ProtectedRoute><ServicesManagement /></ProtectedRoute>} />
+        <Route path="/admin/pengaturan" element={<ProtectedRoute><SettingsManagement /></ProtectedRoute>} />
         
         {/* 404 Page */}
         <Route path="*" element={
